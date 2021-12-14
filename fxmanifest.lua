@@ -1,8 +1,8 @@
 fx_version 'adamant'
 game 'gta5'
 
-author 'Elipse458'
-description 'el_bwh'
+author 'Sacrefi'
+description 'el_bwh converted to QBCore framework - Original author Elipse458'
 version '1.7.2'
 
 ui_page 'html/index.html'
@@ -12,7 +12,6 @@ client_scripts {
     'client.lua'
 }
 server_scripts {
-    '@mysql-async/lib/MySQL.lua',
     'config.lua',
     'server.lua'
 }

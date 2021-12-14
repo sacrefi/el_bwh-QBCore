@@ -123,7 +123,7 @@ $("body").on("click", ".page-link", function() {
                 $("<tr" + (expired ? " class='text-muted'" : "") + ">").append(
                     $("<td>").text(item.id),
                     $("<td>").text((item.sender_name || "UNKNOWN") + " (" + item.sender + ")"),
-                    $("<td>").html("<a data-toggle='collapse' data-target='#reccol" + i + "' aria-expanded='false'><span>" + (escapeUnsafeString(item.receiver_name) || "UNKNOWN") + " (" + receiver[0] + ")</span> <i class='arrow'></i></a><br><div class='collapse' id='reccol" + i + "'>" + receiver.slice(1, receiver.length).join("<br>") + "</div>"),
+                    $("<td>").html("<a data-toggle='collapse' data-target='#reccol" + i + "' aria-expanded='false'><span>" + (escapeUnsafeString(item.receiver_name) || "UNKNOWN") + " (" + receiver[1] + ")</span> <i class='arrow'></i></a><br><div class='collapse' id='reccol" + i + "'>" + receiver.slice(1, receiver.length).join("<br>") + "</div>"),
                     $("<td>").text(item.reason),
                     $("<td id='expire'>").html((item.length == 0 ? "<span class='text-danger'>PERMANENT</span>" : new Date(item.length).format("Y/m/d H:i:s")) + (expired ? (item.unbanned ? " (unbanned)" : " (expired)") : "")),
                     $("<td>").html(expired ? "None" : '<a id="unbanbtn" class="text-success" data-id="' + item.id + '">Unban</a>')
@@ -196,7 +196,7 @@ $(function() {
                     $("<tr" + (expired ? " class='text-muted'" : "") + ">").append(
                         $("<td>").text(item.id),
                         $("<td>").text((item.sender_name || "UNKNOWN") + " (" + item.sender + ")"),
-                        $("<td>").html("<a data-toggle='collapse' data-target='#reccol" + i + "' aria-expanded='false'><span>" + (escapeUnsafeString(item.receiver_name) || "UNKNOWN") + " (" + receiver[0] + ")</span> <i class='arrow'></i></a><br><div class='collapse' id='reccol" + i + "'>" + receiver.slice(1, receiver.length).join("<br>") + "</div>"),
+                        $("<td>").html("<a data-toggle='collapse' data-target='#reccol" + i + "' aria-expanded='false'><span>" + (escapeUnsafeString(item.receiver_name) || "UNKNOWN") + " (" + receiver[1] + ")</span> <i class='arrow'></i></a><br><div class='collapse' id='reccol" + i + "'>" + receiver.join("<br>") + "</div>"),
                         $("<td>").text(item.reason),
                         $("<td id='expire'>").html((item.length == 0 ? "<span class='text-danger'>PERMANENT</span>" : new Date(item.length).format("Y/m/d H:i:s")) + (expired ? (item.unbanned ? " (unbanned)" : " (expired)") : "")),
                         $("<td>").html(expired ? "None" : '<a id="unbanbtn" class="text-success" data-id="' + item.id + '">Unban</a>')

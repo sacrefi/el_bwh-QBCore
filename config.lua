@@ -8,7 +8,7 @@ Config = {
     backup_kick_method = false, -- set this to true if banned players don't get kicked when banned or they can re-connect after being banned.
     kick_without_steam = true, -- prevent a player from joining your server without a steam identifier.
     page_element_limit = 250,
-    ip_ban = false -- set to true to use ip in bans
+    ip_ban = true -- set to true to use ip in bans
 }
 
 -- To enable discord logs go to line 2 of the server.lua and paste your discord webhook between the quotes.
