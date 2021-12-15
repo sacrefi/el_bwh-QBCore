@@ -356,7 +356,7 @@ function sendToDiscord(msg)
 end
 
 function logAdmin(msg)
-    for k, v in ipairs(QBCore.Functions.GetQBPlayers()) do
+    for k, v in pairs(QBCore.Functions.GetQBPlayers()) do
         if isAdmin(v) then
             TriggerClientEvent("chat:addMessage", v.PlayerData.source, {
                 color = {255, 0, 0},
@@ -391,7 +391,7 @@ end
 
 function execOnAdmins(func)
     local ac = 0
-    for k, v in ipairs(QBCore.Functions.GetQBPlayers()) do
+    for k, v in pairs(QBCore.Functions.GetQBPlayers()) do
         if isAdmin(v) then
             ac = ac + 1
             func(v)
@@ -530,9 +530,7 @@ RegisterCommand("assist", function(source, args, rawCommand)
     end
     if not open_assists[source] and not active_assists[source] then
         local ac = execOnAdmins(function(admin)
-            TriggerClientEvent("el_bwh:requestedAssist",
-                               admin.PlayerData.source, GetPlayerName(source),
-                               source);
+            TriggerClientEvent("el_bwh:requestedAssist", admin.PlayerData.source, GetPlayerName(source), source)
             TriggerClientEvent("chat:addMessage", admin.PlayerData.source, {
                 color = {0, 255, 255},
                 multiline = Config.chatassistformat:find("\n") ~= nil,
